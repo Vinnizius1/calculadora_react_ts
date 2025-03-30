@@ -12,6 +12,20 @@ const Calculator: React.FC<CalculatorProps> = () => {
   // e agora estamos esperando o segundo número
   const [waitingForSecondOperand, setWaitingForSecondOperand] = useState<boolean>(false);
 
+    // Função para lidar com a entrada de números
+    const handleNumberClick = (number: string) => {
+        // Verificamos se estamos esperando o segundo operando. Se sim, 
+        // isso significa que um operador já foi clicado e este é o primeiro dígito do segundo número
+        if (waitingForSecondOperand) {
+            setDisplayValue(number);
+            setWaitingForSecondOperand(false);
+            // Se não estamos esperando o segundo operando, significa que estamos digitando o primeiro número ou continuando a digitar o número atual
+        } else {
+            // Se não for "0", CONCATENAMOS o número clicado ao valor existente no displayValue
+            setDisplayValue((prev)=> prev === "0" ? number : prev + number)
+        }
+    }
+
   // Dentro do "return", temos o JSX que define a estrutura visual do nosso componente
   return (
     <div>
@@ -20,25 +34,25 @@ const Calculator: React.FC<CalculatorProps> = () => {
 
       {/* Botões da Calculadora */}
       <div>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
+        <button onClick={() => handleNumberClick('7')}>7</button>
+        <button onClick={() => handleNumberClick('8')}>8</button>
+        <button onClick={() => handleNumberClick('9')}>9</button>
         <button>/</button>
       </div>
       <div>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
+        <button onClick={() => handleNumberClick('4')}>4</button>
+        <button onClick={() => handleNumberClick('5')}>5</button>
+        <button onClick={() => handleNumberClick('6')}>6</button>
         <button>*</button>
       </div>
       <div>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
+        <button onClick={() => handleNumberClick('1')}>1</button>
+        <button onClick={() => handleNumberClick('2')}>2</button>
+        <button onClick={() => handleNumberClick('3')}>3</button>
         <button>-</button>
       </div>
       <div>
-        <button>0</button>
+        <button onClick={() => handleNumberClick('0')}>0</button>
         <button>.</button>
         <button>=</button>
         <button>+</button>

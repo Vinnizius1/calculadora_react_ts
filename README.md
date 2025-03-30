@@ -1,3 +1,5 @@
+# Primeira Ação
+
 1- Componente Principal: Vamos criar um componente principal chamado Calculator que irá conter toda a lógica e a interface da nossa calculadora.
 
 2- Estado (State): Precisaremos de alguns estados para controlar:
@@ -22,3 +24,10 @@ Uma função para lidar com o clique no botão de igual.
 Uma função para lidar com o clique no botão de ponto decimal.
 
 5- Lógica de Cálculo: Dentro dessas funções, implementaremos a lógica para realizar as operações matemáticas com base nos estados.
+
+
+# Segunda Ação
+
+1- Implementar a Função handleNumberClick, que receberá o valor do número que foi clicado como argumento.
+
+2- Conectar a Função aos Botões de Número.
