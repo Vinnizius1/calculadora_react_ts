@@ -1,9 +1,11 @@
 import React from 'react';
+import Calculator from './components/Calculator';
 
 const App: React.FC = () => {
   return (
-    <div>
-      <h1>Teste: App</h1>
+    <div className='App'>
+      <h1>Calculadora Gemini</h1>
+      <Calculator />
     </div>
   );
 };
